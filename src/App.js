@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Outlet } from "react-router-dom";
+import Layout from "./pages/Layout";
+// import Register1 from "./component/Register1";
+// import { app } from "./service/config";
+// import AddData from "./component/AddData";
+// import ReadData from "./component/ReadData";
+import routes from "./routes";
+import { useRoutes } from "react-router-dom";
 function App() {
+  const element = useRoutes(routes);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout />
+
+      <Outlet />
+      {element}
+      {/* <Register1 /> */}
+      {/* <AddData />
+      <ReadData /> */}
+    </>
   );
 }
 
