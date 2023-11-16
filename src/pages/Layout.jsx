@@ -22,7 +22,7 @@ export default function Layout() {
   useEffect(() => {
     fetchUser();
     dispatch(setRemoveBasket([]));
-    dispatch(setIsLoading(true));
+    // dispatch(setIsLoading(true));
   }, []);
 
   // To calculate the total amount and price of the basket items by reduce as every change of basketlist
