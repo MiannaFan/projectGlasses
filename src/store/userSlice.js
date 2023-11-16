@@ -1,16 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { collection, query, where, getDocs } from "firebase/firestore";
-// import { getFirestore } from "firebase/firestore";
-import { app } from "../service/config";
 
 const userSlice = createSlice({
   name: "user",
+
   initialState: {
-    basketList: [],
+    isLoading: true,
+    basketList: [{ count: 1, totalPrice: 0, selectSize: "" }],
     isSignIn: false,
-    // isInBasket:false,
+    userList: [],
+    email: "",
   },
   reducers: {
+    setIsLoading(state, action) {
+      state.isLoading = action.payload;
+    },
     setBasketList(state, action) {
       state.basketList = [...state.basketList, action.payload];
     },
@@ -21,23 +24,46 @@ const userSlice = createSlice({
     setRemoveBasket(state, action) {
       state.basketList = action.payload;
     },
+    setUser(state, action) {
+      state.userList = action.payload;
+    },
+    setUserEmail(state, action) {
+      state.email = action.payload;
+    },
+
     setBasketlistCount(state, action) {
-      console.log(state.basketList);
       const basketProduct = state.basketList.find(
         (item) => item.id === action.payload
       );
-
-      console.log(basketProduct);
-      console.log(action.payload);
+      let itemCount = basketProduct.count;
+      if (basketProduct) {
+        basketProduct.count = itemCount + 1;
+        basketProduct.totalPrice = basketProduct.count * basketProduct.price;
+        console.log(basketProduct.totalPrice);
+      }
+    },
+    setBasketlistCountMinus(state, action) {
+      const basketProduct = state.basketList.find(
+        (item) => item.id === action.payload
+      );
+      let itemCount = basketProduct.count;
+      if (basketProduct && itemCount > 1) {
+        basketProduct.count = itemCount - 1;
+        basketProduct.totalPrice = basketProduct.count * basketProduct.price;
+      }
     },
   },
 });
 
 export const {
+  setIsLoading,
   setBasketList,
   setIsSignIn,
   setRemoveBasket,
   setBasketlistCount,
+  setBasketlistCountMinus,
+  setUser,
+  setUserEmail,
 } = userSlice.actions;
 const userReducer = userSlice.reducer;
 export default userReducer;

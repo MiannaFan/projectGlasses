@@ -1,3 +1,4 @@
+// Show the product which has the isRecommend as true
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchRecommendList } from "../store/product";

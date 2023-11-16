@@ -2,9 +2,7 @@ import React, { useState, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { setIsSignIn } from "../store/userSlice";
-
-import { app } from "../service/config";
+import { setIsSignIn, setUserEmail, setRemoveBasket } from "../store/userSlice";
 
 export default function Signin() {
   const navigate = useNavigate();
@@ -18,17 +16,19 @@ export default function Signin() {
   const getEmail = () => {
     setEmail(emailRef.current.value);
   };
+
   const getPassword = () => {
     setPassword(passwordRef.current.value);
   };
   const auth = getAuth();
   const handleClick = async (e) => {
     e.preventDefault();
-    // console.log(auth, email, password);
     try {
       const res = signInWithEmailAndPassword(auth, email, password);
       console.log(res.user, "success");
       dispatch(setIsSignIn(true));
+      dispatch(setUserEmail(`${email}`));
+      dispatch(setRemoveBasket([]));
       navigate("/");
     } catch (error) {
       console.error(error);

@@ -5,7 +5,7 @@
   top: 0;
   bottom: 0;
   background-color: white;
-  z-index: 1;
+  z-index: 20;
   transition: all 1s;
 }
 
@@ -275,8 +275,28 @@
   background-image: url(./Img/banner-girl-1.23493f87.png);
 }
 
+.noFindContent {
+  width: 100%;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.noFindContent .noFind {
+  width: 80%;
+  height: 80%;
+  background: #f2f2f2;
+  position: relative;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
 .product {
-  padding: 30px 150px 30px 150px;
+  padding: 30px 100px 30px 100px;
+  background-color: #f9f9f9;
 }
 
 .product .title {
@@ -338,20 +358,24 @@
 }
 
 .productRecommend {
-  padding: 30px 150px 30px 150px;
+  padding: 100px 150px 30px 150px;
+}
+
+.productRecommend .title {
+  margin-left: 50px;
 }
 
 .productRecommend ul {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.allProduct {
-  padding: 20px 40px 20px 40px;
+.shopPage .allProduct {
+  padding: 160px 40px 130px 40px;
   flex-grow: 1;
   position: relative;
 }
 
-.allProduct ul {
+.shopPage .allProduct ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 0.5rem;
@@ -359,22 +383,22 @@
   list-style: none;
 }
 
-.allProduct ul li {
+.shopPage .allProduct ul li {
   position: relative;
   overflow: hidden;
   padding: 0;
 }
 
-.allProduct ul li a {
+.shopPage .allProduct ul li a {
   text-decoration: none;
   display: block;
   width: 100%;
 }
 
-.allProduct ul li a .productDetail {
+.shopPage .allProduct ul li a .productDetail {
   position: relative;
-  max-width: 180px;
-  height: 230px;
+  max-width: 15rem;
+  height: 18rem;
   border: 1px solid #e1e1e1;
   text-align: center;
   position: relative;
@@ -382,9 +406,9 @@
   overflow: hidden;
 }
 
-.allProduct ul li a .productDetail .picture {
+.shopPage .allProduct ul li a .productDetail .picture {
   width: 100%;
-  height: 100px;
+  height: 130px;
   padding: 0 1.6rem;
   margin: auto;
   position: relative;
@@ -392,42 +416,42 @@
   transition: all 0.4s ease-in-out;
 }
 
-.allProduct ul li a .productDetail .picture img {
+.shopPage .allProduct ul li a .productDetail .picture img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.allProduct ul li a .productDetail .detail {
+.shopPage .allProduct ul li a .productDetail .detail {
   padding: 1.6rem;
   transition: all 0.4s ease-in-out;
 }
 
-.allProduct ul li a .productDetail .detail h5 {
-  max-width: 120px;
+.shopPage .allProduct ul li a .productDetail .detail h5 {
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: black;
+  text-align: center;
 }
 
-.allProduct ul li a .productDetail .detail .brand {
+.shopPage .allProduct ul li a .productDetail .detail .brand {
   margin-top: 0;
   font-size: 0.8rem;
   color: #b6b6b6;
   font-style: italic;
 }
 
-.allProduct ul li a .productDetail .detail .price {
+.shopPage .allProduct ul li a .productDetail .detail .price {
   font-size: 1rem;
   color: black;
 }
 
-.allProduct ul li .addBasketButton {
+.shopPage .allProduct ul li .addBasketButton {
   position: absolute;
   width: 100%;
-  max-width: 180px;
+  max-width: 15rem;
   bottom: -100%;
   font-size: 1rem;
   transition: all 0.4s ease-in-out;
@@ -436,10 +460,10 @@
   color: white;
 }
 
-.allProduct ul li .removeBasketButton {
+.shopPage .allProduct ul li .removeBasketButton {
   position: absolute;
   width: 100%;
-  max-width: 180px;
+  max-width: 15rem;
   border: none;
   bottom: -100%;
   font-size: 0.8rem;
@@ -448,27 +472,27 @@
   color: black;
 }
 
-.allProduct ul li:hover a .productDetail .picture {
-  height: 70px;
+.shopPage .allProduct ul li:hover a .productDetail .picture {
+  height: 100px;
 }
 
-.allProduct ul li:hover a .productDetail .detail {
+.shopPage .allProduct ul li:hover a .productDetail .detail {
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
 }
 
-.allProduct ul li:hover .addBasketButton {
+.shopPage .allProduct ul li:hover .addBasketButton {
   bottom: 0;
 }
 
-.allProduct ul li:hover .removeBasketButton {
+.shopPage .allProduct ul li:hover .removeBasketButton {
   bottom: 0;
 }
 
 .sign {
   width: 100%;
   margin: 0 auto;
-  padding: 20px 240px 20px 240px;
+  padding: 20px 12rem 20px 12rem;
 }
 
 .sign .sign_wrap {
@@ -538,7 +562,7 @@
 }
 
 .sign .sign_wrap .benefit_main .benefit_middle {
-  width: 20%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -558,7 +582,7 @@
 }
 
 .sign .sign_wrap .benefit_main .benefit_right {
-  width: 30%;
+  width: 35%;
   height: 23.75rem;
   margin-top: 100px;
   padding-right: 100px;
@@ -567,7 +591,7 @@
 .sign .sign_wrap .benefit_main .benefit_right button {
   padding: 16px;
   margin-bottom: 20px;
-  width: 260px;
+  width: 16rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_right button img {
@@ -621,7 +645,7 @@
 .signInContent {
   width: 100%;
   margin: 0 auto;
-  padding: 20px 240px 20px 240px;
+  padding: 20px 12rem 20px 12rem;
 }
 
 .signInContent .sign_wrap {
@@ -692,7 +716,7 @@
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_middle {
-  width: 20%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -712,7 +736,7 @@
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_right {
-  width: 30%;
+  width: 35%;
   height: 23.75rem;
   margin-top: 100px;
   padding-right: 100px;
@@ -721,7 +745,7 @@
 .signInContent .sign_wrap .benefit_main .benefit_right button {
   padding: 16px;
   margin-bottom: 20px;
-  width: 260px;
+  width: 16rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_right button img {
@@ -785,7 +809,8 @@
 }
 
 .footer {
-  position: relative;
+  width: 100%;
+  position: absolute;
   padding: 0 5.6rem;
   margin-top: 4.8rem;
   background: #f0f0f0;
@@ -800,24 +825,32 @@
   flex-basis: 20%;
 }
 
-.content .content_main a {
+.productDetailContent {
+  background-color: #f9f9f9;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 200px;
+  padding-right: 100px;
+}
+
+.productDetailContent .content_main a {
   text-decoration: none;
   color: black;
 }
 
-.content .content_main a .title img {
+.productDetailContent .content_main a .title img {
   width: 20px;
   height: 20px;
 }
 
-.content .content_main .product-modal {
+.productDetailContent .content_main .product-modal {
   width: 100%;
   display: flex;
   background: #fff;
   border: 1px solid #e1e1e1;
 }
 
-.content .content_main .product-modal .product-left {
+.productDetailContent .content_main .product-modal .product-left {
   width: 180px;
   height: inherit;
   background: #fff;
@@ -828,16 +861,16 @@
   position: relative;
 }
 
-.content .content_main .product-modal .product-left ul {
+.productDetailContent .content_main .product-modal .product-left ul {
   list-style: none;
   padding: 0;
 }
 
-.content .content_main .product-modal .product-left ul li {
+.productDetailContent .content_main .product-modal .product-left ul li {
   padding: 0;
 }
 
-.content .content_main .product-modal .product-left ul li div {
+.productDetailContent .content_main .product-modal .product-left ul li div {
   width: 100%;
   height: 130px;
   border: 1px solid #e1e1e1;
@@ -845,13 +878,13 @@
   position: relative;
 }
 
-.content .content_main .product-modal .product-left ul li div img {
+.productDetailContent .content_main .product-modal .product-left ul li div img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.content .content_main .product-modal .product-middle {
+.productDetailContent .content_main .product-modal .product-middle {
   width: 40rem;
   height: inherit;
   flex-grow: 1;
@@ -862,25 +895,51 @@
   align-items: center;
 }
 
-.content .content_main .product-modal .product-right {
+.productDetailContent .content_main .product-modal .product-right {
   width: 500px;
   padding: 3.2rem;
   background-color: white;
 }
 
-.content .content_main .product-modal .product-right ul {
+.productDetailContent .content_main .product-modal .product-right .name {
+  font-weight: bold;
+  font-size: x-large;
+  padding-bottom: 10px;
+}
+
+.productDetailContent .content_main .product-modal .product-right .brand {
+  padding-bottom: 10px;
+}
+
+.productDetailContent .content_main .product-modal .product-right ul {
   display: flex;
   list-style: none;
   margin-top: 20px;
 }
 
-.content .content_main .product-modal .product-right ul li div {
+.productDetailContent .content_main .product-modal .product-right ul li {
+  position: relative;
+}
+
+.productDetailContent .content_main .product-modal .product-right ul li div {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 
-.content .content_main .product-modal .product-right .addBasketButton {
+.productDetailContent .content_main .product-modal .product-right ul li .done {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  align-items: center;
+}
+
+.productDetailContent .content_main .product-modal .product-right .price {
+  font-size: 2rem;
+  margin: 0 0 20px 20px;
+}
+
+.productDetailContent .content_main .product-modal .product-right .addBasketButton {
   width: 100%;
   max-width: 180px;
   font-size: 1rem;
@@ -890,7 +949,7 @@
   color: white;
 }
 
-.content .content_main .product-modal .product-right .removeBasketButton {
+.productDetailContent .content_main .product-modal .product-right .removeBasketButton {
   width: 100%;
   max-width: 180px;
   border: none;
@@ -898,4 +957,328 @@
   transition: all 0.4s ease-in-out;
   padding: 0.6rem 1.4rem;
   color: black;
+}
+
+.searchContent {
+  width: 100%;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.searchContent .title {
+  text-align: center;
+}
+
+.searchContent .searchWrap {
+  width: 100%;
+  padding-left: 100px;
+  padding-top: 50px;
+}
+
+.searchContent .searchWrap ul {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.searchContent .searchWrap ul .searchProduct {
+  width: 280px;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.searchContent .searchWrap ul .searchProduct a {
+  text-decoration: none;
+  width: 280px;
+}
+
+.searchContent .searchWrap ul .searchProduct a .productDetail {
+  position: relative;
+  max-width: 250px;
+  height: 300px;
+  border: 1px solid #e1e1e1;
+  text-align: center;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+}
+
+.searchContent .searchWrap ul .searchProduct a .productDetail .picture {
+  width: 100%;
+  height: 150px;
+  padding: 0 1.6rem;
+  margin: auto;
+  position: relative;
+  background: #f6f6f6;
+  transition: all 0.4s ease-in-out;
+}
+
+.searchContent .searchWrap ul .searchProduct a .productDetail .picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.searchContent .searchWrap ul .searchProduct a .productDetail .detail {
+  padding: 1.6rem;
+  transition: all 0.4s ease-in-out;
+  text-align: center;
+}
+
+.searchContent .searchWrap ul .searchProduct a .productDetail .detail h5 {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+}
+
+.searchContent .searchWrap ul .searchProduct a .productDetail .detail .brand {
+  margin-top: 0;
+  font-size: 0.8rem;
+  color: #b6b6b6;
+  font-style: italic;
+}
+
+.searchContent .searchWrap ul .searchProduct a .productDetail .detail .price {
+  font-size: 1rem;
+  color: black;
+}
+
+.searchContent .searchWrap ul .searchProduct .addBasketButton {
+  position: absolute;
+  width: 100%;
+  max-width: 250px;
+  bottom: -100%;
+  font-size: 1rem;
+  transition: all 0.4s ease-in-out;
+  padding: 0.9rem 1.875rem;
+  background-color: black;
+  color: white;
+}
+
+.searchContent .searchWrap ul .searchProduct .removeBasketButton {
+  position: absolute;
+  width: 100%;
+  max-width: 250px;
+  border: none;
+  bottom: -100%;
+  font-size: 0.8rem;
+  transition: all 0.4s ease-in-out;
+  padding: 0.6rem 1.4rem;
+  color: black;
+}
+
+.searchContent .searchWrap ul .searchProduct:hover a .productDetail .picture {
+  height: 100px;
+}
+
+.searchContent .searchWrap ul .searchProduct:hover a .productDetail .detail {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.searchContent .searchWrap ul .searchProduct:hover .addBasketButton {
+  bottom: 0;
+}
+
+.searchContent .searchWrap ul .searchProduct:hover .removeBasketButton {
+  bottom: 0;
+}
+
+.accountWrap {
+  border: none !important;
+  background-color: #f9f9f9 !important;
+}
+
+.accountWrap .MyAccountTitle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.accountWrap .MyAccountTitle .avatar {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.accountWrap .MyAccountTitle .avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.accountWrap .MyAccountTitle .arrow img {
+  width: 10px;
+  height: 10px;
+}
+
+.myAccount a {
+  text-decoration: none;
+  color: black;
+}
+
+.content {
+  width: 100%;
+  position: relative;
+  display: flex;
+  background-color: #f9f9f9;
+}
+
+.content .user-tab {
+  width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+}
+
+.content .user-tab .user-tab-nav {
+  background: #f2f2f2;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 0 2rem;
+}
+
+.content .user-tab .user-tab-nav .user-tab-menu {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: -1px;
+}
+
+.content .user-tab .user-tab-nav .user-tab-menu .user-tab-item {
+  list-style-type: none;
+  color: #818181;
+  padding: 1rem;
+  font-size: 1rem;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+}
+
+.content .user-tab .user-tab-nav .user-tab-menu .user-tab-active {
+  color: #4a4a4a;
+  font-weight: 700;
+  border-bottom: 1px solid #fff;
+  background: #fff;
+}
+
+.content .user-tab .user-tab-content {
+  height: 100%;
+  position: relative;
+  min-height: 80vh;
+  padding: 1rem;
+}
+
+.content .user-tab .user-tab-content .user-profile {
+  padding: 1rem;
+  display: flex;
+  margin: auto;
+  display: none;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block {
+  width: 100%;
+  height: auto;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-banner {
+  width: 100%;
+  height: 150px;
+  position: relative;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-banner .user-profile-banner-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #e9e9e9;
+  overflow: hidden;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-banner .user-profile-banner-wrapper .user-profile-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-banner .user-profile-avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  position: absolute;
+  left: 1.6rem;
+  bottom: -30%;
+  background: #e1e1e1;
+  overflow: hidden;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-banner .user-profile-avatar-wrapper .user-profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-banner .user-profile-edit {
+  position: absolute;
+  right: 1.2rem;
+  bottom: -12%;
+  font-size: 0.8rem;
+  background: #101010;
+  padding: 1rem;
+  border: 1px solid #101010;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-details {
+  padding: 5rem 1.6rem 3.2rem;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-details .user-profile-name {
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-details span {
+  line-height: 40px;
+}
+
+.content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-details h5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.content .user-tab .user-tab-content .loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 1rem;
+  bottom: 1rem;
+  background-color: #f2f2f2;
+}
+
+.content .user-tab .user-tab-content .loader h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.content .user-tab .user-tab-content .loader span {
+  color: #818181;
+  font-size: 0.8rem;
 }

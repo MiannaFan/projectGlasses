@@ -1,50 +1,68 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-// import { fetchRecommendList } from "../store/product";
-import { setBasketList } from "../store/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 import useBasket from "../hooks/useBasket";
-import { app } from "../service/config";
-// import * as React from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-// import Recommended from "./Recommended";
+import useProduct from "../hooks/useProduct";
+import { setNewColorListredux } from "../store/product";
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const { isInBasket, removeBasket } = useBasket();
-  const dispatch = useDispatch();
-  let [imageUrl, setImageUrl] = useState();
-  //   console.log(imageUrl);
+  const { isInBasket, removeBasket, AddBasket } = useBasket();
   const recommendList = useSelector((state) => state.product.recommendList);
   const productList = useSelector((state) => state.product.productList);
-
+  const dispatch = useDispatch();
   const product = productList.filter((item) => item.id === id);
 
+  // Create the new colorlist for once
+  const { getColorList } = useProduct();
   useEffect(() => {
-    setImageUrl((imageUrl = product[0].image));
+    getColorList(product);
+  }, []);
+  const newColorList = useSelector((state) => state.product.newColorList);
+
+  // Handle click to select the color we click by the index
+  const handleClickColor = (item, index) => {
+    setColor(item.newcolor);
+    console.log(index);
+    dispatch(setNewColorListredux(index));
+  };
+
+  // Set the first picture showed as the first in ths list while id changes
+  let [imageUrl, setImageUrl] = useState();
+  useEffect(() => {
+    setImageUrl(product[0].image);
   }, [id]);
 
-  const [age, setAge] = React.useState("");
-
+  // Handle click to select the size
+  const [size, setSize] = useState(product[0].sizes[0]);
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setSize(event.target.value);
   };
 
+  // Handel click to add the product to basket with some initial information we selected
+  const [color, setColor] = useState(product[0].availableColors[0]);
   const handleClick = (item) => {
-    dispatch(setBasketList(item));
+    AddBasket({
+      ...item,
+      count: 1,
+      totalPrice: item.price,
+      selectSize: size,
+      selectColor: color,
+    });
   };
+
   const handleClickRemove = (id) => {
-    console.log(id);
     removeBasket(id);
   };
   return (
     <>
       <Outlet />
-      <div className="content">
+      <div className="productDetailContent">
         <div className="content_main">
           <NavLink to="/shop">
             <div className="title">
@@ -78,39 +96,55 @@ export default function ProductDetail() {
               <img src={imageUrl} alt="" />
             </div>
             <div className="product-right">
-              <div className="brand">{product[0].brand}</div>
               <div className="name">{product[0].name}</div>
+              <div className="brand">{product[0].brand}</div>
+
               <div className="discribe">{product[0].description}</div>
               <hr />
               <div>Lens Width and Frame Sizes</div>
               <Box sx={{ minWidth: 120 }}>
                 <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">
+                  <InputLabel
+                    id="demo-simple-select-label"
+                    style={{ zIndex: "0" }}
+                  >
                     -Select Size-
                   </InputLabel>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={age}
-                    label="Age"
+                    value={size}
+                    label="Size"
                     onChange={handleChange}
                   >
-                    <MenuItem value={10}>{product[0].sizes[0]}mm</MenuItem>
-                    <MenuItem value={20}>{product[0].sizes[1]}mm</MenuItem>
-                    <MenuItem value={30}>{product[0].sizes[2]}mm</MenuItem>
+                    <MenuItem value="24">{product[0].sizes[0]}mm</MenuItem>
+                    <MenuItem value="36">{product[0].sizes[1]}mm</MenuItem>
+                    <MenuItem value="48">{product[0].sizes[2]}mm</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
               <div>Choose Color</div>
               <ul>
-                {product[0].availableColors.map((item, index) => {
+                {newColorList.map((item, index) => {
                   return (
                     <li key={index}>
-                      <div style={{ backgroundColor: item }}></div>
+                      <div
+                        style={{ backgroundColor: item.newcolor }}
+                        onClick={() => handleClickColor(item, index)}
+                      ></div>
+                      <div
+                        className="done"
+                        style={{
+                          display: item.isSelectColor ? "flex" : "none",
+                        }}
+                      >
+                        <img src="/assets/done.png" alt="done" />
+                      </div>
                     </li>
                   );
                 })}
               </ul>
+              <div className="price">${product[0].price}.00</div>
 
               {isInBasket(product[0].id) ? (
                 <button

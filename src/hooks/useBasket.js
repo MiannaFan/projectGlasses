@@ -1,4 +1,3 @@
-// import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setRemoveBasket, setBasketList } from "../store/userSlice";
 
@@ -6,14 +5,17 @@ export default function useBasket() {
   const isSignIn = useSelector((state) => state.user.isSignIn);
   const dispatch = useDispatch();
   const basketList = useSelector((state) => state.user.basketList);
-
+  // To judge if the product already in the basket after signin
   const isInBasket = isSignIn
     ? (id) => basketList.find((item) => item.id === id)
     : () => undefined;
+  // Only can add to basket after signin
+  const AddBasket = isSignIn
+    ? (item) => {
+        dispatch(setBasketList(item));
+      }
+    : () => {};
 
-  const AddBasket = (item) => {
-    dispatch(setBasketList(item));
-  };
   const removeBasket = (id) => {
     const newBasket = basketList.filter((item) => item.id !== id);
     console.log(newBasket);
@@ -25,24 +27,5 @@ export default function useBasket() {
     dispatch(setRemoveBasket(newBasket));
   };
 
-  //add the  key "count"to basketList
-  // const addCount = () => {
-  //   basketList.forEach((element) => {
-  //     console.log(element);
-  //     element.count = 1;
-  //     dispatch(setRemoveBasket(basketList));
-  //   });
-  // };
-  //根据id 增加商品的数量
-  const addQuantity = (id) => {
-    // const newBasketList = basketList;
-    // const basketProduct = newBasketList.find((item) => item.id === id);
-    // basketProduct.count += 1;
-    basketList.forEach((item) => {
-      id === item.id ? (item.count += 1) : (item.count += 0);
-    });
-
-    dispatch(setRemoveBasket(basketList));
-  };
-  return { isInBasket, removeBasket, clearBasket, addQuantity, AddBasket };
+  return { isInBasket, removeBasket, clearBasket, AddBasket };
 }

@@ -1,3 +1,5 @@
+// Add the original products information to my firebase
+
 import React from "react";
 import { productList } from "../data";
 import { collection, addDoc } from "firebase/firestore";

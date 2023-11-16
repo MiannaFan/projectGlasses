@@ -1,26 +1,79 @@
+// The right part of the navigation will change to this component after signin
 import * as React from "react";
 import { Dropdown } from "@mui/base/Dropdown";
 import { Menu } from "@mui/base/Menu";
 import { MenuButton as BaseMenuButton } from "@mui/base/MenuButton";
 import { MenuItem as BaseMenuItem, menuItemClasses } from "@mui/base/MenuItem";
 import { styled } from "@mui/system";
+import { getAuth, signOut } from "firebase/auth";
+import { setIsSignIn } from "../store/userSlice";
+import { useDispatch } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { setIsLoading } from "../store/userSlice";
 
 export default function MenuIntroduction() {
-  const createHandleMenuClick = (menuItem) => {
-    return () => {
-      console.log(`Clicked on ${menuItem}`);
-    };
+  
+  const dispatch = useDispatch();
+
+  // Set this 'isLoading' param to avoid error of 'can't find the user information like name' before sign in
+  const isLoading = useSelector((state) => state.user.isLoading);
+  const userList = useSelector((state) => state.user.userList);
+  const auth = getAuth();
+  const navigate = useNavigate();
+
+  // Handle clike to sign out
+  const handleClick = async (e) => {
+    e.preventDefault();
+    try {
+      const res = signOut(auth);
+      console.log(res, "success");
+      // The right part of the navigation will change to Signup.jsx after signout
+      dispatch(setIsSignIn(false));
+      // set isloading true that the system don't need to render the name they don't have to report an error
+      dispatch(setIsLoading(true));
+      navigate("/signin");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <Dropdown>
-      <MenuButton>My account</MenuButton>
-      <Menu slots={{ listbox: Listbox }}>
-        <MenuItem onClick={createHandleMenuClick("Profile")}>Profile</MenuItem>
-        <MenuItem onClick={createHandleMenuClick("Language settings")}>
-          Language settings
+      <MenuButton className="accountWrap">
+        <div className="MyAccountTitle">
+          <div className="name">{isLoading ? "" : userList[0].name}</div>
+          <div className="avatar">
+            <img
+              alt="Avatar"
+              className="user-profile-img is-img-loaded"
+              src="/assets/Avatar.jpg"
+            />
+          </div>
+          <div className="arrow">
+            <img src="/assets/down-arrow.png" alt="arrow" />
+          </div>
+        </div>
+      </MenuButton>
+      <Menu slots={{ listbox: Listbox }} className="myAccount">
+        <NavLink to="/account">
+          <MenuItem>
+            View Account
+            <img
+              style={{ width: "20px", height: "20px", marginLeft: "10px" }}
+              src="/assets/account.png"
+              alt="account"
+            />
+          </MenuItem>
+        </NavLink>
+        <MenuItem onClick={handleClick}>
+          Sign out
+          <img
+            style={{ width: "20px", height: "20px", marginLeft: "10px" }}
+            src="/assets/sign-out.png"
+            alt="signOut"
+          />
         </MenuItem>
-        <MenuItem onClick={createHandleMenuClick("Log out")}>Log out</MenuItem>
       </Menu>
     </Dropdown>
   );

@@ -8,19 +8,45 @@ const productSlice = createSlice({
   initialState: {
     productList: [],
     recommendList: [],
+    productDetail: [],
+    newColorList: [],
   },
   reducers: {
     setProductList(state, action) {
       state.productList = action.payload;
-      //   console.log(state.productList);
     },
     setRecommendList(state, action) {
       state.recommendList = action.payload;
     },
+    setProductColor(state, action) {
+      state.newColorList = action.payload;
+    },
+
+    setNewColorListredux(state, action) {
+      const indexList = Array.from({
+        length: state.newColorList.length,
+      }).map((val, i) => {
+        return i;
+      });
+      console.log(indexList);
+
+      for (let i = 0; i < indexList.length; i++) {
+        if (i === action.payload) {
+          state.newColorList[i].isSelectColor = true;
+        } else {
+          state.newColorList[i].isSelectColor = false;
+        }
+      }
+    },
   },
 });
 
-export const { setProductList, setRecommendList } = productSlice.actions;
+export const {
+  setProductList,
+  setRecommendList,
+  setProductColor,
+  setNewColorListredux,
+} = productSlice.actions;
 const db = getFirestore(app);
 const fetchFeatureList = () => {
   return async (dispatch) => {

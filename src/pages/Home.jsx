@@ -1,9 +1,8 @@
+// Show the home page that contains the whole products
 import React, { useEffect } from "react";
 import { NavLink, Outlet, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFeatureList, fetchRecommendList } from "../store/product";
-// import ProductDetail from "./ProductDetail";
-
 export default function Home(props) {
   const featureList = useSelector((state) => state.product.productList);
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
+// Show the product which has the isFeature as true
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import { fetchFeatureList } from "../store/product";
 import { Link } from "react-router-dom";
 
@@ -26,10 +26,6 @@ export default function Featured() {
         </div>
       </div>
       <div className="product">
-        {/* <div className="title">
-            <h1>Featured Products</h1>
-            <NavLink to="/featured">See All</NavLink>
-          </div> */}
         <ul>
           {featureList.map((item) => {
             return (

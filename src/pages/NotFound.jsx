@@ -1,3 +1,4 @@
+// Show notfound page if input wrong address avoid reporting an error
 import React from "react";
 
 export default function NotFound() {
