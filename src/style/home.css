@@ -1,7 +1,37 @@
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1142px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 .index .basket {
-  width: 600px;
+  width: 37.5rem;
   position: fixed;
-  right: -600px;
+  right: -37.5rem;
   top: 0;
   bottom: 0;
   background-color: white;
@@ -11,7 +41,7 @@
 
 .index .basket .basket-list {
   padding: 1.6rem;
-  padding-bottom: 100px;
+  padding-bottom: 6.25rem;
   overflow-y: scroll;
   height: 100%;
   display: flex;
@@ -22,7 +52,7 @@
   display: flex;
   align-items: center;
   position: sticky;
-  top: -20px;
+  top: -1.25rem;
   background: #fff;
   z-index: 60;
 }
@@ -63,7 +93,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 .index .basket .basket-list ul li {
@@ -81,32 +111,32 @@
 
 .index .basket .basket-list ul li .basket-item .basket-control {
   display: grid;
-  width: 30px;
-  height: 90px;
+  width: 1.875rem;
+  height: 5.625rem;
   align-items: center;
 }
 
 .index .basket .basket-list ul li .basket-item .basket-control button {
-  width: 35px;
+  width: 2.1875rem;
   height: 100%;
-  padding: 5px;
+  padding: 0.3rem;
   font-weight: 700;
   background-color: white;
   border: 1px solid #e1e1e1;
 }
 
 .index .basket .basket-list ul li .basket-item .basket-control button img {
-  width: 9px;
-  height: 9px;
+  width: 0.56rem;
+  height: 0.56rem;
 }
 
 .index .basket .basket-list ul li .basket-item .basketItem-iamge {
-  width: 90px;
-  height: 90px;
+  width: 5.625rem;
+  height: 5.625rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .index .basket .basket-list ul li .basket-item .basketItem-iamge img {
@@ -115,13 +145,13 @@
 
 .index .basket .basket-list ul li .basket-item .basketItem-dedail {
   display: grid;
-  width: 250px;
-  padding: 10px;
+  width: 15.625rem;
+  padding: 0.625rem;
 }
 
 .index .basket .basket-list ul li .basket-item .basketItem-dedail span {
   color: #8d8d8d;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .index .basket .basket-list ul li .basket-item .basketItem-dedail .item-name {
@@ -129,7 +159,7 @@
 }
 
 .index .basket .basket-list ul li .basket-item .basketItem-dedail .item-name h4 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .index .basket .basket-list ul li .basket-item .basketItem-dedail .item-detail {
@@ -138,23 +168,23 @@
 }
 
 .index .basket .basket-list ul li .basket-item .basketItem-dedail .item-detail .color div {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 50%;
 }
 
 .index .basket .basket-list ul li .basket-item .item-price {
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .index .basket .basket-list ul li .basket-item .item-price h4 {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .index .basket .basket-list ul li .basket-item .item-delete {
-  margin-left: 20px;
-  width: 40px;
-  height: 40px;
+  margin-left: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border: 1px solid #e1e1e1;
   display: flex;
   justify-content: center;
@@ -163,8 +193,8 @@
 }
 
 .index .basket .basket-list ul li .basket-item .item-delete img {
-  width: 15px;
-  height: 15px;
+  width: 0.9375rem;
+  height: 0.9375rem;
 }
 
 .index .basket .basket-checkout {
@@ -182,7 +212,7 @@
 .content {
   width: 100%;
   margin: 0 auto;
-  padding: 30px 120px 30px 120px;
+  padding: 1.875rem 7.5rem 1.875rem 7.5rem;
 }
 
 .content .benefit_main {
@@ -191,14 +221,14 @@
   justify-content: space-between;
   gap: 5rem;
   background: #f3f3f3;
-  padding-left: 60px;
-  height: 400px;
+  padding-left: 3.75rem;
+  height: 25rem;
 }
 
 .content .benefit_main .benefit_left {
   width: 50%;
   position: relative;
-  padding-top: 60px;
+  padding-top: 3.75rem;
   padding-bottom: 1.125rem;
 }
 
@@ -240,9 +270,9 @@
 }
 
 .content .benefit_main .benefit_left .choose_destination a div img {
-  margin-left: 10px;
-  width: 20px;
-  height: 20px;
+  margin-left: 0.625rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .content .benefit_main .banner {
@@ -312,23 +342,26 @@
 .product ul {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(2, 45%);
+  grid-template-columns: repeat(3, 30%);
   grid-gap: 2rem;
   list-style: none;
 }
 
-.product ul a {
+.product ul li {
+  min-height: 23.4375rem;
+}
+
+.product ul li a {
   text-decoration: none;
   color: black;
 }
 
-.product ul a .productDetail {
+.product ul li a .productDetail {
   width: 100%;
-  max-height: 30rem;
   border: 1px solid #e1e1e1;
 }
 
-.product ul a .productDetail .picture {
+.product ul li a .productDetail .picture {
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -337,47 +370,52 @@
   overflow: hidden;
 }
 
-.product ul a .productDetail .picture img {
+.product ul li a .productDetail .picture img {
   width: 100%;
   height: 100%;
   transition: all 1s;
   opacity: 1;
 }
 
-.product ul a .productDetail .picture img:hover {
+.product ul li a .productDetail .picture img:hover {
   transform: scale(1.05);
 }
 
-.product ul a .productDetail .detail {
+.product ul li a .productDetail .detail {
   padding: 2rem;
   text-decoration: none;
 }
 
-.product ul a .productDetail .detail p {
+.product ul li a .productDetail .detail h2 {
+  font-size: 1.5rem;
+}
+
+.product ul li a .productDetail .detail p {
   color: #818181;
 }
 
 .productRecommend {
-  padding: 100px 150px 30px 150px;
+  padding: 6.25rem 9.375rem 1.875rem 9.375rem;
 }
 
 .productRecommend .title {
-  margin-left: 50px;
+  margin-left: 3.125rem;
 }
 
 .productRecommend ul {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 31%);
 }
 
 .shopPage .allProduct {
-  padding: 160px 40px 130px 40px;
+  padding: 5rem 2.5rem 5rem 2.5rem;
   flex-grow: 1;
   position: relative;
+  background-color: #f9f9f9;
 }
 
 .shopPage .allProduct ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
   grid-gap: 0.5rem;
   justify-content: center;
   list-style: none;
@@ -473,7 +511,7 @@
 }
 
 .shopPage .allProduct ul li:hover a .productDetail .picture {
-  height: 100px;
+  height: 6.25rem;
 }
 
 .shopPage .allProduct ul li:hover a .productDetail .detail {
@@ -503,18 +541,18 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 5px;
-  padding-right: 40px;
+  padding: 0.3125rem;
+  padding-right: 2.5rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_left {
   position: relative;
   width: 50%;
-  padding: 30px;
+  padding: 1.875rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_left .title h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_left .form {
@@ -523,28 +561,28 @@
 }
 
 .sign .sign_wrap .benefit_main .benefit_left .form .formitem {
-  margin-top: 5px;
+  margin-top: 0.3125rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_left .form .formitem .lable {
   display: block;
   padding: 1rem 1.2rem;
   color: #696868;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_left .form .formitem input {
   width: 100%;
-  padding: 10px 1.6rem !important;
+  padding: 0.625rem 1.6rem !important;
   border: 1px solid #c5c5c5 !important;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_left .form .choose_destination {
   position: absolute;
   right: 0;
   z-index: 1;
-  padding: 30px 30px;
+  padding: 1.875rem 1.875rem;
   color: #fff;
   font-size: 0.6875rem;
   letter-spacing: 0.1875rem;
@@ -554,11 +592,11 @@
 
 .sign .sign_wrap .benefit_main .benefit_left .form .choose_destination .button {
   text-decoration: none;
-  padding: 10px 40px 10px 20px;
+  padding: 0.625rem 2.5rem 0.625rem 1.25rem;
   color: white;
-  background: black url(./Img/icons8-arrow-48.png) no-repeat 85px 13px;
+  background: black url(./Img/icons8-arrow-48.png) no-repeat 5.3125rem 0.8125rem;
   background-size: 20%;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_middle {
@@ -566,8 +604,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 120px;
-  margin-right: 10px;
+  margin-top: 7.5rem;
+  margin-right: 0.625rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_middle .up {
@@ -577,27 +615,27 @@
 }
 
 .sign .sign_wrap .benefit_main .benefit_middle div {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.3125rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_right {
   width: 35%;
   height: 23.75rem;
-  margin-top: 100px;
-  padding-right: 100px;
+  margin-top: 6.25rem;
+  padding-right: 6.25rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_right button {
-  padding: 16px;
-  margin-bottom: 20px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
   width: 16rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_right button img {
-  width: 12px;
-  height: 12px;
-  margin-right: 20px;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 1.25rem;
 }
 
 .sign .sign_wrap .benefit_main .benefit_right .facebook {
@@ -631,13 +669,13 @@
 
 .sign .sign_wrap .sign_down span {
   color: #4a4a4a;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .sign .sign_wrap .sign_down button {
-  margin-left: 30px;
-  padding: 12px 16px;
-  font-size: 12px;
+  margin-left: 1.875rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
   border: 1px solid #e1e1e1;
   color: #4a4a4a;
 }
@@ -645,7 +683,7 @@
 .signInContent {
   width: 100%;
   margin: 0 auto;
-  padding: 20px 12rem 20px 12rem;
+  padding: 1.25rem 12rem 1.25rem 12rem;
 }
 
 .signInContent .sign_wrap {
@@ -654,21 +692,21 @@
 
 .signInContent .sign_wrap .benefit_main {
   width: 100%;
-  height: 380px;
+  height: 23.75rem;
   display: flex;
   justify-content: space-around;
-  padding: 5px;
-  padding-right: 40px;
+  padding: 0.3125rem;
+  padding-right: 2.5rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_left {
   position: relative;
   width: 50%;
-  padding: 30px;
+  padding: 1.875rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_left .title h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_left .form {
@@ -677,28 +715,28 @@
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_left .form .formitem {
-  margin-top: 5px;
+  margin-top: 0.3125rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_left .form .formitem .lable {
   display: block;
   padding: 1rem 1.2rem;
   color: #696868;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_left .form .formitem input {
   width: 100%;
-  padding: 10px 1.6rem !important;
+  padding: 0.625rem 1.6rem !important;
   border: 1px solid #c5c5c5 !important;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_left .choose_destination {
   position: absolute;
   right: 0;
   z-index: 1;
-  padding: 30px 30px;
+  padding: 1.875rem 1.875rem;
   color: #fff;
   font-size: 0.6875rem;
   letter-spacing: 0.1875rem;
@@ -708,11 +746,11 @@
 
 .signInContent .sign_wrap .benefit_main .benefit_left .choose_destination .button {
   text-decoration: none;
-  padding: 10px 40px 10px 20px;
+  padding: 0.625rem 2.5rem 0.625rem 1.25rem;
   color: white;
-  background: black url(./Img/icons8-arrow-48.png) no-repeat 85px 13px;
+  background: black url(./Img/icons8-arrow-48.png) no-repeat 5.3125rem 0.8125rem;
   background-size: 20%;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_middle {
@@ -720,8 +758,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 120px;
-  margin-right: 10px;
+  margin-top: 7.5rem;
+  margin-right: 0.625rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_middle .up {
@@ -731,27 +769,27 @@
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_middle div {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.3125rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_right {
   width: 35%;
   height: 23.75rem;
-  margin-top: 100px;
-  padding-right: 100px;
+  margin-top: 6.25rem;
+  padding-right: 6.25rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_right button {
-  padding: 16px;
-  margin-bottom: 20px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
   width: 16rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_right button img {
-  width: 12px;
-  height: 12px;
-  margin-right: 20px;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 1.25rem;
 }
 
 .signInContent .sign_wrap .benefit_main .benefit_right .facebook {
@@ -785,34 +823,42 @@
 
 .signInContent .sign_wrap .sign_down span {
   color: #4a4a4a;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .signInContent .sign_wrap .sign_down button {
-  margin-left: 30px;
-  padding: 12px 16px;
-  font-size: 12px;
+  margin-left: 1.875rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
   border: 1px solid #e1e1e1;
   color: #4a4a4a;
 }
 
-.filters-toggle {
+.filters {
   text-align: center;
+  width: 8rem;
+  margin-left: -6.25rem;
 }
 
-.filters-toggle .button-muted {
-  font-size: 1.2rem;
-  padding: 1.2rem 1.6rem;
+.filters .filter-button {
+  padding: 0.625rem;
+  font-size: 1rem;
+  display: flex;
   background: #f2f2f2;
   color: #7d7d7d;
   border: 1px solid #e1e1e1;
+  align-items: center;
+}
+
+.filters .filter-button div {
+  display: flex;
+  align-items: center;
 }
 
 .footer {
   width: 100%;
   position: absolute;
   padding: 0 5.6rem;
-  margin-top: 4.8rem;
   background: #f0f0f0;
   display: flex;
   align-items: center;
@@ -829,8 +875,8 @@
   background-color: #f9f9f9;
   width: 100%;
   margin: 0 auto;
-  padding-left: 200px;
-  padding-right: 100px;
+  padding-left: 12.5rem;
+  padding-right: 6.25rem;
 }
 
 .productDetailContent .content_main a {
@@ -839,8 +885,8 @@
 }
 
 .productDetailContent .content_main a .title img {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .productDetailContent .content_main .product-modal {
@@ -851,12 +897,12 @@
 }
 
 .productDetailContent .content_main .product-modal .product-left {
-  width: 180px;
+  width: 11.25rem;
   height: inherit;
   background: #fff;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 0.625rem;
   overflow-y: scroll;
   position: relative;
 }
@@ -872,9 +918,9 @@
 
 .productDetailContent .content_main .product-modal .product-left ul li div {
   width: 100%;
-  height: 130px;
+  height: 8.125rem;
   border: 1px solid #e1e1e1;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
   position: relative;
 }
 
@@ -896,7 +942,7 @@
 }
 
 .productDetailContent .content_main .product-modal .product-right {
-  width: 500px;
+  width: 31.25rem;
   padding: 3.2rem;
   background-color: white;
 }
@@ -904,17 +950,17 @@
 .productDetailContent .content_main .product-modal .product-right .name {
   font-weight: bold;
   font-size: x-large;
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
 }
 
 .productDetailContent .content_main .product-modal .product-right .brand {
-  padding-bottom: 10px;
+  padding-bottom: 0.625rem;
 }
 
 .productDetailContent .content_main .product-modal .product-right ul {
   display: flex;
   list-style: none;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .productDetailContent .content_main .product-modal .product-right ul li {
@@ -922,26 +968,26 @@
 }
 
 .productDetailContent .content_main .product-modal .product-right ul li div {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
 }
 
 .productDetailContent .content_main .product-modal .product-right ul li .done {
   position: absolute;
-  top: 15px;
-  left: 25px;
+  top: 0.9375rem;
+  left: 1.5625rem;
   align-items: center;
 }
 
 .productDetailContent .content_main .product-modal .product-right .price {
   font-size: 2rem;
-  margin: 0 0 20px 20px;
+  margin: 0 0 1.25rem 1.25rem;
 }
 
 .productDetailContent .content_main .product-modal .product-right .addBasketButton {
   width: 100%;
-  max-width: 180px;
+  max-width: 11.25rem;
   font-size: 1rem;
   transition: all 0.4s ease-in-out;
   padding: 0.9rem 1.875rem;
@@ -951,7 +997,7 @@
 
 .productDetailContent .content_main .product-modal .product-right .removeBasketButton {
   width: 100%;
-  max-width: 180px;
+  max-width: 11.25rem;
   border: none;
   font-size: 0.8rem;
   transition: all 0.4s ease-in-out;
@@ -971,8 +1017,8 @@
 
 .searchContent .searchWrap {
   width: 100%;
-  padding-left: 100px;
-  padding-top: 50px;
+  padding-left: 6.25rem;
+  padding-top: 3.125rem;
 }
 
 .searchContent .searchWrap ul {
@@ -981,22 +1027,22 @@
 }
 
 .searchContent .searchWrap ul .searchProduct {
-  width: 280px;
+  width: 17.5rem;
   position: relative;
   overflow: hidden;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .searchContent .searchWrap ul .searchProduct a {
   text-decoration: none;
-  width: 280px;
+  width: 17.5rem;
 }
 
 .searchContent .searchWrap ul .searchProduct a .productDetail {
   position: relative;
-  max-width: 250px;
-  height: 300px;
+  max-width: 15.625rem;
+  height: 18.75rem;
   border: 1px solid #e1e1e1;
   text-align: center;
   position: relative;
@@ -1006,7 +1052,7 @@
 
 .searchContent .searchWrap ul .searchProduct a .productDetail .picture {
   width: 100%;
-  height: 150px;
+  height: 9.375rem;
   padding: 0 1.6rem;
   margin: auto;
   position: relative;
@@ -1049,7 +1095,7 @@
 .searchContent .searchWrap ul .searchProduct .addBasketButton {
   position: absolute;
   width: 100%;
-  max-width: 250px;
+  max-width: 15.625rem;
   bottom: -100%;
   font-size: 1rem;
   transition: all 0.4s ease-in-out;
@@ -1061,7 +1107,7 @@
 .searchContent .searchWrap ul .searchProduct .removeBasketButton {
   position: absolute;
   width: 100%;
-  max-width: 250px;
+  max-width: 9.375rem;
   border: none;
   bottom: -100%;
   font-size: 0.8rem;
@@ -1071,7 +1117,7 @@
 }
 
 .searchContent .searchWrap ul .searchProduct:hover a .productDetail .picture {
-  height: 100px;
+  height: 6.25rem;
 }
 
 .searchContent .searchWrap ul .searchProduct:hover a .productDetail .detail {
@@ -1099,19 +1145,19 @@
 }
 
 .accountWrap .MyAccountTitle .avatar {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 0.625rem;
+  margin-right: 0.625rem;
 }
 
 .accountWrap .MyAccountTitle .avatar img {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   border-radius: 50%;
 }
 
 .accountWrap .MyAccountTitle .arrow img {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
 }
 
 .myAccount a {
@@ -1127,7 +1173,7 @@
 }
 
 .content .user-tab {
-  width: 800px;
+  width: 50rem;
   height: 100%;
   margin: 0 auto;
   margin-top: 1rem;
@@ -1185,7 +1231,7 @@
 
 .content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-banner {
   width: 100%;
-  height: 150px;
+  height: 9.375rem;
   position: relative;
 }
 
@@ -1207,10 +1253,10 @@
 }
 
 .content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-banner .user-profile-avatar-wrapper {
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 0.1875rem solid #fff;
   position: absolute;
   left: 1.6rem;
   bottom: -30%;
@@ -1246,17 +1292,17 @@
 
 .content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-details .user-profile-name {
   font-size: 2rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-details span {
-  line-height: 40px;
+  line-height: 2.5rem;
 }
 
 .content .user-tab .user-tab-content .user-profile .user-profile-block .user-profile-details h5 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   font-size: 1rem;
 }
 
@@ -1275,7 +1321,7 @@
 
 .content .user-tab .user-tab-content .loader h3 {
   font-size: 1.2rem;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 .content .user-tab .user-tab-content .loader span {

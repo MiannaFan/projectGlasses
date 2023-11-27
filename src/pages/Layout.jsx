@@ -3,10 +3,14 @@ import React, { useEffect, useState, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import MyAccount from "../component/MyAccount.jsx";
-import useUser from "../hooks/useUser";
 import useBasket from "../hooks/useBasket";
 import useOutsideClick from "../hooks/useOutsideClick.js";
-import { setIsLoading, setRemoveBasket } from "../store/userSlice";
+import { useLocation } from "react-router-dom";
+import {
+  setIsLoading,
+  setRemoveBasket,
+  setShowFilter,
+} from "../store/userSlice";
 import {
   setBasketlistCount,
   setBasketlistCountMinus,
@@ -16,15 +20,17 @@ export default function Layout() {
   const basketListRef = useRef(null);
   const dispatch = useDispatch();
   const isSignIn = useSelector((state) => state.user.isSignIn);
+  const location = useLocation();
 
-  // Get the user information list by the email signed in and transfer the user information to the redux
-  const { fetchUser } = useUser();
   useEffect(() => {
-    fetchUser();
     dispatch(setRemoveBasket([]));
-    // dispatch(setIsLoading(true));
+    dispatch(setIsLoading(true));
   }, []);
+  useEffect(() => {
+    dispatch(setShowFilter(false));
+  }, [location]);
 
+  const showFilter = useSelector((state) => state.user.showFilter);
   // To calculate the total amount and price of the basket items by reduce as every change of basketlist
   const [totalCount, setTotalCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -93,25 +99,14 @@ export default function Layout() {
   return (
     <>
       <div className="index">
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar  bg-body-tertiary">
           <div className="container-fluid">
             <NavLink to="/">
               <img src="/assets/download.png" alt="logo" />
             </NavLink>
 
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarTogglerDemo02"
-              aria-controls="navbarTogglerDemo02"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <div className="navbarContent">
+              <ul className="navbar-nav ">
                 <li className="nav-item">
                   <NavLink to="/">Home</NavLink>
                 </li>
@@ -125,10 +120,19 @@ export default function Layout() {
                   <NavLink to="/recommended">Recommended</NavLink>
                 </li>
               </ul>
+              {showFilter && (
+                <div className="filters">
+                  <button className="filter-button" type="button">
+                    <div>Filters &nbsp;</div>
+                    <img src="./assets/filter.png" alt="" />
+                  </button>
+                </div>
+              )}
               {/* <NavLink to="/search"> */}
               <div className="d-flex" role="search">
                 <input
-                  className="form-control me-2"
+                  // className="form-control me-2"
+                  className="search"
                   type="text"
                   placeholder="Search product..."
                   aria-label="Search"

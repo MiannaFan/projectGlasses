@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import useBasket from "../hooks/useBasket";
+import { setShowFilter } from "../store/userSlice";
 
 export default function Shop() {
+  const dispatch = useDispatch();
   const { isInBasket, removeBasket, AddBasket } = useBasket();
   const allList = useSelector((state) => state.product.productList);
-
+  useEffect(() => {
+    dispatch(setShowFilter(true));
+  }, []);
   const handleClick = (item) => {
     AddBasket({
       ...item,
@@ -24,12 +28,6 @@ export default function Shop() {
   return (
     <>
       <div className="shopPage">
-        <div className="filters-toggle" role="presentation">
-          <button className="button-muted button-small" type="button">
-            Filters &nbsp;
-            <img src="./assets/filter.png" alt="" />
-          </button>
-        </div>
         <div className="allProduct">
           <ul>
             {allList.map((item) => {

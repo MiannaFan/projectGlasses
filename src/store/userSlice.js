@@ -5,6 +5,7 @@ const userSlice = createSlice({
 
   initialState: {
     isLoading: true,
+    showFilter: false,
     basketList: [{ count: 1, totalPrice: 0, selectSize: "" }],
     isSignIn: false,
     userList: [],
@@ -13,6 +14,9 @@ const userSlice = createSlice({
   reducers: {
     setIsLoading(state, action) {
       state.isLoading = action.payload;
+    },
+    setShowFilter(state, action) {
+      state.showFilter = action.payload;
     },
     setBasketList(state, action) {
       state.basketList = [...state.basketList, action.payload];
@@ -57,6 +61,7 @@ const userSlice = createSlice({
 
 export const {
   setIsLoading,
+  setShowFilter,
   setBasketList,
   setIsSignIn,
   setRemoveBasket,

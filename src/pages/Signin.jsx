@@ -32,7 +32,7 @@ export default function Signin() {
       const res = signInWithEmailAndPassword(auth, email, password);
       console.log(res.user, "success");
       dispatch(setIsSignIn(true));
-      dispatch(setIsLoading(false));
+      // dispatch(setIsLoading(false));
       dispatch(setUserEmail(`${email}`));
       dispatch(setRemoveBasket([]));
       navigate("/");

@@ -3,7 +3,7 @@
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { app } from "../service/config";
-import { setUser } from "../store/userSlice";
+import { setUser, setIsLoading } from "../store/userSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 export default function useUser() {
@@ -19,6 +19,8 @@ export default function useUser() {
       arr.push(res);
     });
     dispatch(setUser(arr));
+    //set isloading after fetchUser successfully
+    dispatch(setIsLoading(false));
   };
   return { fetchUser };
 }

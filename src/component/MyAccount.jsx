@@ -1,5 +1,6 @@
 // The right part of the navigation will change to this component after signin
 import * as React from "react";
+import { useEffect } from "react";
 import { Dropdown } from "@mui/base/Dropdown";
 import { Menu } from "@mui/base/Menu";
 import { MenuButton as BaseMenuButton } from "@mui/base/MenuButton";
@@ -11,14 +12,19 @@ import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { setIsLoading } from "../store/userSlice";
+import useUser from "../hooks/useUser";
 
 export default function MenuIntroduction() {
-  
   const dispatch = useDispatch();
+  const { fetchUser } = useUser();
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
-  // Set this 'isLoading' param to avoid error of 'can't find the user information like name' before sign in
   const isLoading = useSelector((state) => state.user.isLoading);
+
   const userList = useSelector((state) => state.user.userList);
+  console.log(userList);
   const auth = getAuth();
   const navigate = useNavigate();
 
