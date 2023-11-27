@@ -13,7 +13,7 @@ nav a {
 }
 .container-fluid {
   flex-wrap: nowrap !important;
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
 .navbarContent {
   display: flex;
@@ -59,11 +59,13 @@ li {
   background-color: rgba(234, 231, 231, 0.662);
 }
 .search {
-  background: url(./Img/search.png) no-repeat 10px 5px !important;
+  background: url(./Img/search.png) no-repeat 0.625rem 0.8rem !important;
   background-size: 10% !important;
   padding-left: 40px !important;
   border-color: #e1e1e1 !important;
   border-radius: 0 !important;
+  width: 10rem;
+  font-size: small;
 }
 
 .btn-outline-success {

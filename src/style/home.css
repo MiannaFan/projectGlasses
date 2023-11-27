@@ -836,7 +836,7 @@
 
 .filters {
   text-align: center;
-  width: 8rem;
+  min-width: 8rem;
   margin-left: -6.25rem;
 }
 
