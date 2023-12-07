@@ -9,6 +9,7 @@ import { useLocation } from "react-router-dom";
 import { setIsLoading, setShowFilter } from "../store/userSlice";
 import {
   setBasketlistCount,
+  setRemoveBasket,
   setBasketlistCountMinus,
 } from "../store/userSlice.js";
 
@@ -19,7 +20,12 @@ export default function Layout() {
   const location = useLocation();
 
   useEffect(() => {
-    // dispatch(setRemoveBasket([]));
+    const isFirstLoad = localStorage.getItem("isFirstLoad") === null;
+    if (isFirstLoad) {
+      dispatch(setRemoveBasket([]));
+      localStorage.setItem("isFirstLoad", "false");
+    }
+
     dispatch(setIsLoading(true));
   }, []);
   useEffect(() => {
