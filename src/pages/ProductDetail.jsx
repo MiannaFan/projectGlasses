@@ -22,7 +22,7 @@ export default function ProductDetail() {
   const { getColorList } = useProduct();
   useEffect(() => {
     getColorList(product);
-  }, []);
+  }, [id]);
   const newColorList = useSelector((state) => state.product.newColorList);
 
   // Handle click to select the color we click by the index

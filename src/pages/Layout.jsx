@@ -6,11 +6,7 @@ import MyAccount from "../component/MyAccount.jsx";
 import useBasket from "../hooks/useBasket";
 import useOutsideClick from "../hooks/useOutsideClick.js";
 import { useLocation } from "react-router-dom";
-import {
-  setIsLoading,
-  setRemoveBasket,
-  setShowFilter,
-} from "../store/userSlice";
+import { setIsLoading, setShowFilter } from "../store/userSlice";
 import {
   setBasketlistCount,
   setBasketlistCountMinus,
@@ -23,7 +19,7 @@ export default function Layout() {
   const location = useLocation();
 
   useEffect(() => {
-    dispatch(setRemoveBasket([]));
+    // dispatch(setRemoveBasket([]));
     dispatch(setIsLoading(true));
   }, []);
   useEffect(() => {
@@ -39,6 +35,7 @@ export default function Layout() {
     const basketCountList = basketList.map((item) => {
       return item.count;
     });
+
     const basketTotalPriceList = basketList.map((item) => {
       return item.totalPrice;
     });
@@ -147,6 +144,9 @@ export default function Layout() {
                 onClick={handleClick}
               >
                 <img src="/assets/shopping-bag.png" alt="shopping" />
+                {totalCount > 0 && (
+                  <div className="basketCount">{totalCount}</div>
+                )}
               </button>
               {isSignIn ? (
                 <MyAccount />
@@ -172,7 +172,12 @@ export default function Layout() {
             <div className="basket-list">
               <div className="basket-header">
                 <h3 className="basket-header-title">
-                  My Basket &nbsp;<span>( {totalCount} item)</span>
+                  My Basket &nbsp;
+                  <span>
+                    {totalCount > 1
+                      ? `(${totalCount} items)`
+                      : `(${totalCount} item)`}
+                  </span>
                 </h3>
                 <button
                   className="basket-toggle button button-border button-border-gray button-small"

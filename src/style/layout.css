@@ -70,10 +70,26 @@ li {
 
 .btn-outline-success {
   border: none !important;
+  display: flex !important;
+  position: relative !important;
 }
 .btn-outline-success img {
   width: 24px;
   height: 24px;
+}
+.basketCount {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: red;
+  border-radius: 100%;
+  color: white;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btn-outline-success:hover {
   background-color: rgba(234, 231, 231, 0.662) !important;
